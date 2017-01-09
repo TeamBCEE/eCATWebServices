@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CFF0DD69-DA82-4FD2-AED1-728118F080DB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ecat.DataLib</RootNamespace>
+    <AssemblyName>Ecat.DataLib</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Breeze.ContextProvider, Version=1.6.0.0, Culture=neutral, PublicKeyToken=f6085f1a45e2ac59, processorArchitecture=MSIL">
+      <HintPath>..\packages\Breeze.Server.ContextProvider.1.6.0\lib\Breeze.ContextProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Breeze.ContextProvider.EF6, Version=1.6.0.0, Culture=neutral, PublicKeyToken=f6085f1a45e2ac59, processorArchitecture=MSIL">
+      <HintPath>..\packages\Breeze.Server.ContextProvider.EF6.1.6.0\lib\Breeze.ContextProvider.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\SchoolSchemaConfig.cs" />
+    <Compile Include="Context\ContextSchool.cs" />
+    <Compile Include="Context\EcEfContext.cs" />
+    <Compile Include="Context\ContextBase.cs" />
+    <Compile Include="Context\ContextUser.cs" />
+    <Compile Include="MigrationSchoolContext\201701090145130_Init.cs" />
+    <Compile Include="MigrationSchoolContext\201701090145130_Init.Designer.cs">
+      <DependentUpon>201701090145130_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigrationSchoolContext\201701090149258_CustomKeys.cs" />
+    <Compile Include="MigrationSchoolContext\201701090149258_CustomKeys.Designer.cs">
+      <DependentUpon>201701090149258_CustomKeys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigrationSchoolContext\SchoolCtxConfiguration.cs" />
+    <Compile Include="MigrationUserContext\201701071220465_Init.cs" />
+    <Compile Include="MigrationUserContext\201701071220465_Init.Designer.cs">
+      <DependentUpon>201701071220465_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigrationUserContext\UserCtxConfiguration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserContextMigrations\201701090232483_SmallChanges.cs" />
+    <Compile Include="UserContextMigrations\201701090232483_SmallChanges.Designer.cs">
+      <DependentUpon>201701090232483_SmallChanges.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ecat.ModelLib\Ecat.ModelLib.csproj">
+      <Project>{a9222432-cada-4272-9e8e-256f8cd3b1a3}</Project>
+      <Name>Ecat.ModelLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MigrationSchoolContext\201701090145130_Init.resx">
+      <DependentUpon>201701090145130_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigrationSchoolContext\201701090149258_CustomKeys.resx">
+      <DependentUpon>201701090149258_CustomKeys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigrationUserContext\201701071220465_Init.resx">
+      <DependentUpon>201701071220465_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserContextMigrations\201701090232483_SmallChanges.resx">
+      <DependentUpon>201701090232483_SmallChanges.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
