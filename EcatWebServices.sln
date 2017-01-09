@@ -11,7 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecat.DataLib", "Ecat.DataLi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecat.LogicLib", "Ecat.LogicLib\Ecat.LogicLib.csproj", "{E92D6D16-AB74-44CB-81B4-A73691FDDA38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecat.WebApp", "src\Ecat.WebApp\Ecat.WebApp.csproj", "{51904159-1EAF-45AB-BF92-0EFD7BA73A54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecat.WebApp", "src\Ecat.WebApp\Ecat.WebApp.csproj", "{51904159-1EAF-45AB-BF92-0EFD7BA73A54}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E232B17F-CE7F-4D8C-A01B-2578BB7FBC4B}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.md = Readme.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
