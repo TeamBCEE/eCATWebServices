@@ -9,13 +9,13 @@ using Ecat.LogicLib.Utility;
 
 namespace Ecat.LogicLib.School
 {
-    public class SchoolLogic : LogicBase<ContextSchool>, ISchoolLogic
+    public class SchoolLogic : LogicBase<SchoolCtx>, ISchoolLogic
     {
-        private readonly EcEfContext<ContextSchool> _schEfCtx;
+        private readonly BaseEfContext<SchoolCtx> _schEfCtx;
 
         public string Metadata => _schEfCtx.Metadata();
 
-        public SchoolLogic(IServiceProvider provider, EcEfContext<ContextSchool> schEfCtx)
+        public SchoolLogic(IServiceProvider provider, BaseEfContext<SchoolCtx> schEfCtx)
             : base(provider, schEfCtx)
         {
             _schEfCtx = schEfCtx;

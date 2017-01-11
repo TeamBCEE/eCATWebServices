@@ -11,27 +11,27 @@ using Ecat.ModelLib.Utility.Attributes;
 
 namespace Ecat.DataLib.Context
 {
-    public class ContextUserFactory: IDbContextFactory<ContextUser>
+    public class UserCtxFactory: IDbContextFactory<UserCtx>
     {
-        public ContextUser Create()
+        public UserCtx Create()
         {
-            return new ContextUser();
+            return new UserCtx();
         }      
     }
 
-    public class ContextUser : ContextBase<ConfigUserContext>
+    public class UserCtx : BaseCtx<ConfigUserContext>
     {
 
-        public ContextUser() { }
+        public UserCtx() { }
 
-        public ContextUser(string connectionString = null) : base(connectionString)
+        public UserCtx(string connectionString = null) : base(connectionString)
         {
             
         }
 
         protected override void OnModelCreating(DbModelBuilder mb)
         {
-            mb.HasDefaultSchema("User");
+            mb.HasDefaultSchema("usr");
             base.OnModelCreating(mb);
         }
 

@@ -12,19 +12,19 @@ using Ecat.ModelLib.Utility.Attributes;
 
 namespace Ecat.DataLib.Context
 {
-    public class ContextSchoolFactory : IDbContextFactory<ContextSchool>
+    public class SchoolCtxFactory : IDbContextFactory<SchoolCtx>
     {
-        public ContextSchool Create()
+        public SchoolCtx Create()
         {
-            return new ContextSchool();
+            return new SchoolCtx();
         }
     }
 
-    public class ContextSchool : ContextBase<ConfigSchoolContext>
+    public class SchoolCtx : BaseCtx<ConfigSchoolContext>
     {
-        public ContextSchool() { }
+        public SchoolCtx() { }
 
-        public ContextSchool(string connectionString) : base(connectionString)
+        public SchoolCtx(string connectionString) : base(connectionString)
         {
             
         }

@@ -12,13 +12,13 @@ using Ecat.ModelLib.Utility.Attributes;
 
 namespace Ecat.DataLib.Context
 {
-    public class ContextBase<TConfigType> : DbContext where TConfigType: class
+    public class BaseCtx<TConfigType> : DbContext where TConfigType: class
     {
         private const string LocalDb = "Server=(localdb)\\mssqllocaldb;Database=ecat-local-dev;Trusted_Connection=True;MultipleActiveResultSets=true";
         //public string ConnectionString { get; set; }
 
 
-        protected ContextBase(string connectionString = LocalDb) : base(connectionString)
+        protected BaseCtx(string connectionString = LocalDb) : base(connectionString)
         {
             Database.Log = s => Debug.WriteLine(s);
 

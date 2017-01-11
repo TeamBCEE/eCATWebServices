@@ -19,7 +19,7 @@ namespace Ecat.WebApp
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
-            //builder.AddUserSecrets();
+            builder.AddUserSecrets();
             Configuration = builder.Build();
         }
 
@@ -30,11 +30,11 @@ namespace Ecat.WebApp
         {
             services.Configure<EcAppConfig>(Configuration.GetSection("AppConfig"));
             var connectionString = Configuration["DbConnection"];
-            services.AddScoped(_ => new ContextUser(connectionString));
-            services.AddScoped(_ => new EcEfContext<ContextUser>(connectionString));
-            services.AddScoped(_ => new ContextSchool(connectionString));
-            services.AddScoped(_ => new EcEfContext<ContextSchool>(connectionString));
-            services.AddScoped<IUserLogic, UserLogic>();
+            services.AddScoped(_ => new UserCtx(connectionString));
+            services.AddScoped(_ => new BaseEfContext<UserCtx>(connectionString));
+            services.AddScoped(_ => new SchoolCtx(connectionString));
+            services.AddScoped(_ => new BaseEfContext<SchoolCtx>(connectionString));
+             services.AddScoped<IUserLogic, UserLogic>();
             // Add framework services.
             services.AddMvc();
         }

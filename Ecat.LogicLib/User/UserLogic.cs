@@ -14,11 +14,11 @@ using Newtonsoft.Json.Linq;
 
 namespace Ecat.LogicLib.User
 {
-    public class UserLogic: LogicBase<ContextUser>, IUserLogic
+    public class UserLogic: LogicBase<UserCtx>, IUserLogic
     {
-        private readonly EcEfContext<ContextUser> _userEfCtx;
+        private readonly BaseEfContext<UserCtx> _userEfCtx;
 
-        public UserLogic(IServiceProvider provider, EcEfContext<ContextUser> userCtx) 
+        public UserLogic(IServiceProvider provider, BaseEfContext<UserCtx> userCtx) 
             : base(provider, userCtx)
         {
             _userEfCtx = userCtx;

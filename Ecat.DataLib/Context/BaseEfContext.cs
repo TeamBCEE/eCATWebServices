@@ -14,11 +14,11 @@ using Newtonsoft.Json.Linq;
 
 namespace Ecat.DataLib.Context
 {
-    public class EcEfContext<T> : EFContextProvider<T> where T: class, new()
+    public class BaseEfContext<T> : EFContextProvider<T> where T: class, new()
     {
         private readonly string _connectionString;
 
-        public EcEfContext(string connectionString)
+        public BaseEfContext(string connectionString)
         {
             _connectionString = connectionString;
         }

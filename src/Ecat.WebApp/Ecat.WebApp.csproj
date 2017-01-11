@@ -4,6 +4,7 @@
     <TargetFramework>net461</TargetFramework>
     <PreserveCompilationContext>true</PreserveCompilationContext>
     <RuntimeIdentifier>win7-x86</RuntimeIdentifier>
+    <UserSecretsId>5042d2f1-a26e-4256-96db-bace08035325</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="wwwroot\" />

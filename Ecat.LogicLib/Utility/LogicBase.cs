@@ -14,9 +14,9 @@ namespace Ecat.LogicLib.Utility
     public abstract class LogicBase<TContext> where TContext : class, new()
     {
         private readonly IServiceProvider _serviceProvider;
-        private readonly EcEfContext<TContext> _ecEfContext;
+        private readonly BaseEfContext<TContext> _ecEfContext;
 
-        protected LogicBase(IServiceProvider serviceProvider, EcEfContext<TContext> ecEfContext)
+        protected LogicBase(IServiceProvider serviceProvider, BaseEfContext<TContext> ecEfContext)
         {
             _serviceProvider = serviceProvider;
             _ecEfContext = ecEfContext;
