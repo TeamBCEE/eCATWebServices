@@ -61,6 +61,16 @@
     <Compile Include="Context\BaseEfContext.cs" />
     <Compile Include="Context\BaseCtx.cs" />
     <Compile Include="Context\UserCtx.cs" />
+    <Compile Include="MSchCtx\201701131706470_Init.cs" />
+    <Compile Include="MSchCtx\201701131706470_Init.Designer.cs">
+      <DependentUpon>201701131706470_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MSchCtx\Configuration.cs" />
+    <Compile Include="MUsrCtx\201701131720568_Init.cs" />
+    <Compile Include="MUsrCtx\201701131720568_Init.Designer.cs">
+      <DependentUpon>201701131720568_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MUsrCtx\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -74,8 +84,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="MSchCtx\" />
-    <Folder Include="MUsrCtx\" />
+    <EmbeddedResource Include="MSchCtx\201701131706470_Init.resx">
+      <DependentUpon>201701131706470_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MUsrCtx\201701131720568_Init.resx">
+      <DependentUpon>201701131720568_Init.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

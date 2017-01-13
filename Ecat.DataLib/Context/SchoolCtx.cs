@@ -31,7 +31,7 @@ namespace Ecat.DataLib.Context
 
         protected override void OnModelCreating(DbModelBuilder mb)
         {
-            mb.HasDefaultSchema("Sch");
+            mb.HasDefaultSchema("sch");
             base.OnModelCreating(mb);
         }
 

@@ -17,3 +17,8 @@ eCAT Webservices development dependencies are managed by [Nuget](https://www.nug
 * Breeze Server [(Client/Server Data Managment)](http://breeze.github.io/doc-net/)
 * OpenAuthenication [()]()
 
+##### Database Configuration
+To enable Db Migration
+1. `Enable-Migrations -MigrationsDirectory {Directory Name} -StartUpProjectName Ecat.DataLib -ContextTypeName Ecat.DataLib.Context.{Context Name}`
+2. `Add-Migration -StartUpProjectName Ecat.DataLib -ConfigurationTypeName Ecat.DataLib.{Context Name}.Configuration -Name {Subtle Name}`
+3. `Update-Database -StartUpProjectName Ecat.DataLib -ConfigurationTypeName Ecat.DataLib.{Context Name}.Configuration`
